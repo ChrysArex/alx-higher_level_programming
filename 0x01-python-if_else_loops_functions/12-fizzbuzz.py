@@ -1,4 +1,4 @@
-#! /usr/bin/python
+#!/usr/bin/python
 
 def fizzbuzz():
     for i in range(1, 101):

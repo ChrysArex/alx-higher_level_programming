@@ -1,4 +1,4 @@
-#! /usr/bin/python3
+#!/usr/bin/python3
 
 def islower(c):
     if (ord(c) >= 48 and ord(c) <= 90):
