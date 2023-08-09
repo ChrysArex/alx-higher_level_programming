@@ -8,7 +8,7 @@ def uppercase(str):
             asc_value = ord(i) - 32
         value = chr(asc_value)
         if (index + 1 != len(str)):
-            print(value, end="")
+            print("{}".format(value), end="")
         elif (index + 1 == len(str)):
-            print(value)
+            print("{}".format(value))
         index += 1
