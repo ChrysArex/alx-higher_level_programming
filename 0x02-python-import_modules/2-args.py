@@ -2,12 +2,13 @@
 if __name__ == "__main__":
     from sys import argv
     index = 1
+    a, b = 's', ':'
     if len(argv) < 2:
-        a, b = '', '.'
-    else:
-        a, b = 's', ':'
-    print(f"{len(argv) - 1} argument{a}{b}")
-    if a:
+        b = '.'
+    if len(argv) == 2:
+        a = ''
+    print("{} argument{}{}".format(len(argv) - 1, a, b))
+    if len(argv) >= 2:
         for arg in argv[1:]:
-            print(f"{index}: {arg}")
+            print("{}: {}".format(index, arg))
             index += 1
