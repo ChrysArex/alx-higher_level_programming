@@ -11,7 +11,7 @@ int is_palindrome(listint_t **head)
 	int check, idx = 0, len = 0;
 
 	if (*head == NULL)
-		return (0);
+		return (1);
 	while (last_node->next != NULL)
 	{
 		len++;
