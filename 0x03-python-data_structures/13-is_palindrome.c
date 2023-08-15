@@ -18,6 +18,8 @@ int is_palindrome(listint_t **head)
 		previous = last_node;
 		last_node = last_node->next;
 	}
+	if ((len % 2) != 0)
+		return (0);
 	for (; idx <= (len / 2); idx++)
 	{
 		if (first_node->n == last_node->n)
@@ -29,7 +31,6 @@ int is_palindrome(listint_t **head)
 		previous = *head;
 		while (previous->next != last_node)
 			previous = previous->next;
-		idx++;
 	}
 	return (check);
 }
