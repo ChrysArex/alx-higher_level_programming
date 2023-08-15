@@ -19,7 +19,7 @@ int is_palindrome(listint_t **head)
 		last_node = last_node->next;
 	}
 	if (len == 1)
-		return (1)
+		return (1);
 	if ((len % 2) != 0)
 		return (0);
 	for (; idx <= (len / 2); idx++)
