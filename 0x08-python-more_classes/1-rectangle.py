@@ -1,11 +1,24 @@
 #!/usr/bin/python3
+"""This module define the Rectangle class
+
+This version add two private instance attributes with they setter and getter
+"""
+
+
 class Rectangle:
+    """Rectangle with his height and width
+    """
+
     def __init__(self, width=0, height=0):
+        """Initialize the width and the height of the rectangle
+        """
         self.__width = width
         self.__height = height
 
     @property
     def width(self):
+        """width: the width of the rectangle
+        """
         return self.__width
 
     @width.setter
@@ -19,6 +32,7 @@ class Rectangle:
 
     @property
     def height(self):
+        """height: the height of the rectangle"""
         return self.__height
 
     @height.setter
