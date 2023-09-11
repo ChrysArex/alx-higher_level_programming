@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """Define class checker
+define a class that check wether an given object in an instance of a given
+class
 """
 
 
@@ -10,7 +12,4 @@ def is_same_class(obj, a_class):
        obj : the obj we want to check
        a_class: the class
     """
-    if a_class is object:
-        return False
-    else:
-        return isinstance(obj, a_class)
+    return type(obj) is a_class
