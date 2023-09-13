@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-import json
 """Define a python objet getter (from file)
 """
+import json
 
 
 def load_from_json_file(filename):

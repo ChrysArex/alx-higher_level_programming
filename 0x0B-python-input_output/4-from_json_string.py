@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-import json
 """Define an python object getter
 """
+import json
 
 
 def from_json_string(my_str):
