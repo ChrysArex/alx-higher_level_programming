@@ -155,4 +155,14 @@ class TestRectangle(unittest.TestCase):
                 ") 1/3 - 33/2\n")
         sys.stdout = sys.__stdout__
 
+    def test_dict_representation(self):
+        r1 = rectangle.Rectangle(10, 2, 1, 9)
+        r1_dictionary = r1.to_dictionary()
+        r2 = rectangle.Rectangle(1, 1)
+        r2.update(**r1_dictionary)
+        self.assertEqual(r1_dictionary, {'x': 1, 'y': 9, \
+                'id': r1.id, 'height': 2, 'width': 10})
+        self.assertIs(type(r1_dictionary), dict)
+        self.assertNotEqual(r1, r2)
+
 
