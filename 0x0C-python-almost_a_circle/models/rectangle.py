@@ -136,8 +136,8 @@ class Rectangle(Base):
         """
         if type(new_x) is not int:
             raise TypeError("x must be an integer")
-        elif new_x <= 0:
-            raise ValueError("x must be > 0")
+        elif new_x < 0:
+            raise ValueError("x must be >= 0")
         self.__x = new_x
 
     @property
@@ -158,8 +158,8 @@ class Rectangle(Base):
         """
         if type(new_y) is not int:
             raise TypeError("y must be an integer")
-        elif new_y <= 0:
-            raise ValueError("y must be > 0")
+        elif new_y < 0:
+            raise ValueError("y must be >= 0")
         self.__y = new_y
 
     def __str__(self):

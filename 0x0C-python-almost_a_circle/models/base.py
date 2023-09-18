@@ -43,3 +43,35 @@ class Base():
                 result.append(e.to_dictionary())
             with open(name, "w", encoding="utf-8") as mf:
                 mf.write(cls.to_json_string(result))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """returns the list of the JSON string representation json_string"""
+        if json_string is None or len(json_string) == 0:
+            return []
+        return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """returns an instance with all attributes already set"""
+        new = cls(1, 1)
+        new.update(**dictionary)
+        return new
+
+    @classmethod
+    def load_from_file(cls):
+        """returns a list of instances"""
+        if "Rectangle" in str(cls):
+            filename = "Rectangle.json"
+        elif "Square" in str(cls):
+            filename = "Square.json"
+        try:
+            mf = open(filename, "r", encoding="utf-8")
+        except FileNotFoundError:
+            return []
+        old_instances = cls.from_json_string(mf.read())
+        new_instances = []
+        for e in old_instances:
+            new_instances.append(cls.create(**e))
+        mf.close()
+        return new_instances
