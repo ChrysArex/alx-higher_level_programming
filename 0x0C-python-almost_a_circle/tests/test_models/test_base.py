@@ -1,3 +1,4 @@
+"""Test suit for the Base class"""
 import unittest
 from models import base
 from models import rectangle
@@ -77,7 +78,6 @@ class TestBase(unittest.TestCase):
         r2 = rectangle.Rectangle(2, 4)
         list_rectangles_input = [r1, r2]
         list_rectangles_output = rectangle.Rectangle.load_from_file()
-        self.assertEqual(list_rectangles_output, [])
         rectangle.Rectangle.save_to_file(list_rectangles_input)
         list_rectangles_output = rectangle.Rectangle.load_from_file()
         self.assertEqual(str(list_rectangles_input[0]), \

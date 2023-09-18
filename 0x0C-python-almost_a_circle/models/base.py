@@ -75,3 +75,61 @@ class Base():
             new_instances.append(cls.create(**e))
         mf.close()
         return new_instances
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """serializes in CSV"""
+        if list_objs is None:
+            with open("None.csv", "w", encoding="utf-8") as mf:
+                mf.write("[]")
+        else:
+            result = []
+            if "Rectangle" in str(list_objs[0]):
+                name = "Rectangle.csv"
+                with open(name, "w", encoding="utf-8") as mf:
+                    for e in list_objs:
+                        mf.write("{},{},{},{},{}\n".format(
+                            e.id, e.width, e.height, e.x, e.y
+                            ))
+            elif "Square" in str(list_objs[0]):
+                name = "Square.csv"
+                with open(name, "w", encoding="utf-8") as mf:
+                    for e in list_objs:
+                        mf.write("{},{},{},{}\n".format(
+                            e.id, e.size, e.x, e.y
+                            ))
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """deserialize csv file"""
+        if "Square" in str(cls):
+            filename = "Square.csv"
+            try:
+                mf = open(filename, "r", encoding="utf-8")
+            except FileNotFoundError:
+                return []
+            new_instances = []
+            for e in mf.readlines():
+                token = e.split(',')
+                new_instances.append(cls(
+                    int(token[1]), int(token[2]),
+                    int(token[3]), int(token[0])
+                    ))
+            mf.close()
+            return new_instances
+        elif "Rectangle" in str(cls):
+            filename = "Rectangle.csv"
+            try:
+                mf = open(filename, "r", encoding="utf-8")
+            except FileNotFoundError:
+                return []
+            new_instances = []
+            for e in mf.readlines():
+                token = e.split(',')
+                new_instances.append(cls(
+                    int(token[1]), int(token[2]),
+                    int(token[3]), int(token[4]),
+                    int(token[0])
+                    ))
+            mf.close()
+            return new_instances

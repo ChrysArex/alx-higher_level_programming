@@ -1,3 +1,4 @@
+"""Test suit for the rectangle class"""
 import unittest
 from models import rectangle
 import sys
@@ -164,5 +165,3 @@ class TestRectangle(unittest.TestCase):
                 'id': r1.id, 'height': 2, 'width': 10})
         self.assertIs(type(r1_dictionary), dict)
         self.assertNotEqual(r1, r2)
-
-
