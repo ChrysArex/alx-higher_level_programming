@@ -15,4 +15,4 @@ if __name__ == "__main__":
     if len(state) != 0:
         print(str(state.id) + ": " + state.name)
     else:
-        print()
+        print("Nothing")
