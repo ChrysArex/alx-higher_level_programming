@@ -8,7 +8,7 @@ re(url, function (a, b, c) {
   }
   JSON.parse(c).results.forEach(function (elmts) {
     elmts.characters.forEach(function (perso) {
-      if (perso === 'https://swapi-api.alx-tools.com/api/people/18/') {
+      if (perso[perso.length - 3] === '1' && perso[perso.length - 2] === '8') {
         count++;
       }
     }
